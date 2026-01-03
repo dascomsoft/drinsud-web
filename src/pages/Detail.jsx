@@ -5,104 +5,52 @@ import {
   User,
   Briefcase,
   Mail,
-  Phone,
   MapPin,
   Award,
-  Calendar,
-  Globe,
   Users,
   Target,
   BookOpen,
   Heart,
-  Star,
-  Linkedin,
-  Twitter,
-  Facebook,
-  Instagram,
   ChevronRight,
   Shield,
   Rocket,
-  Lightbulb
+  Lightbulb,
+  Globe,
+  Cpu,
+  Building,
+  Code,
+  Database
 } from 'lucide-react';
 
-// Données des membres (à remplacer par votre API ou données réelles)
+// Données des membres (vos données exactes)
 const membersData = [
-  {
+  { 
     id: 1,
-    name: "John Doe",
-    fonction: "CEO & Fondateur",
-    image: "/images/me.jpg",
-    description: "Expert en développement durable avec 15 ans d'expérience. Spécialiste en investissements internationaux et développement local.",
-    email: "john.doe@drinsud.com",
-    phone: "+237 699 37 7664",
-    location: "Yaoundé, Cameroun",
-    experience: "15 ans",
-    expertise: ["Développement Durable", "Investissement", "Gestion de Projets"],
-    bio: "Passionné par le développement économique et social, John a fondé DRINDSUD avec la vision de connecter la diaspora avec des opportunités d'investissement au Cameroun.",
-    achievements: [
-      "Plus de 100 projets réalisés",
-      "Expert certifié en développement durable",
-      "Prix de l'innovation 2022"
-    ],
-    social: {
-      linkedin: "https://linkedin.com/in/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      facebook: "https://facebook.com/johndoe"
-    }
+    image: "/images/menber.jpg",
+    name: "Wambo Jean Ernest",
+    fonction: "Diplomate indépendant",
+    description: "Mr.Wambo Jean Ernest est un diplomate indépendant diplômé de l'Institut des Relations Internationales du Cameroun. Spécialiste en ingénierie de la coopération internationale et décentralisée, co-développement et développement durable. Il est également doctorant dans le même institut, entrepreneur agricole et militant au sein de plusieurs associations au Cameroun."
   },
   {
     id: 2,
-    name: "Jane Smith",
-    fonction: "Directrice Financière",
-    image: "/images/menber.jpg",
-    description: "Spécialiste en finance et investissement international avec 10 ans d'expérience.",
-    email: "jane.smith@drinsud.com",
-    phone: "+237 699 37 7665",
-    location: "Douala, Cameroun",
-    experience: "10 ans",
-    expertise: ["Finance", "Investissement", "Gestion de Portefeuille"],
-    bio: "Jane apporte son expertise financière pour optimiser les investissements et assurer la croissance durable de DRINDSUD.",
-    achievements: [
-      "Gestion de portefeuille de 50M+",
-      "Certification CFA",
-      "Meilleure directrice financière 2021"
-    ]
+    image: "/images/menber1.jpg",
+    name: "Mecu Tchame Simba",
+    fonction: "Architecte",
+    description: "Mr.Tchame est Architecte passionné, avec une expertise en design innovant et durable. Fortes compétences en conception architecturale, gestion de projets et communication efficace. Expérience démontrée dans la création de solutions créatives et fonctionnelles pour répondre aux besoins des clients. Toujours motivé par le désir de repousser les limites du design afin de créer des espaces inspirants et durables."
   },
   {
     id: 3,
-    name: "Robert Johnson",
-    fonction: "Directeur des Opérations",
-    image: "/images/menber1.jpg",
-    description: "Expert en gestion de projets et ressources humaines avec 12 ans d'expérience.",
-    email: "robert.johnson@drinsud.com",
-    phone: "+237 699 37 7666",
-    location: "Yaoundé, Cameroun",
-    experience: "12 ans",
-    expertise: ["Gestion de Projets", "Ressources Humaines", "Opérations"],
-    bio: "Robert supervise toutes les opérations de DRINDSUD, assurant l'excellence opérationnelle et le développement de l'équipe.",
-    achievements: [
-      "Gestion de 200+ projets",
-      "Certification PMP",
-      "Leader opérationnel de l'année 2020"
-    ]
+    image: "/images/me.jpg",
+    name: "Dassi Dieudonne",
+    fonction: "Informaticien (Développeur Front-end)",
+    description: "Mr.Dassi est un développeur passionné, doté d'une expertise technique exceptionnelle et d'une créativité débordante. Avec une solide expérience dans le domaine du développement logiciel, il excelle dans la création de solutions innovantes et efficaces. Toujours à l'affût des dernières technologies et des meilleures pratiques de codage, Mr.Dassi est un atout précieux pour tout projet de développement. Son engagement envers l'excellence et sa capacité à relever les défis font de lui un collaborateur de choix pour transformer les idées en réalité numérique."
   },
   {
     id: 4,
-    name: "Maria Garcia",
-    fonction: "Responsable Relations",
-    image: "/images/te.jpg",
-    description: "Spécialiste en relations diaspora et partenariats avec 8 ans d'expérience.",
-    email: "maria.garcia@drinsud.com",
-    phone: "+237 699 37 7667",
-    location: "Paris, France",
-    experience: "8 ans",
-    expertise: ["Relations Internationales", "Partenariats", "Communication"],
-    bio: "Maria connecte la diaspora camerounaise avec des opportunités d'investissement et de développement au Cameroun.",
-    achievements: [
-      "Établissement de 50+ partenariats",
-      "Expert en relations internationales",
-      "Prix de l'excellence en communication"
-    ]
+    image: "/images/ntet.jpg",
+    name: "Fongwouet Ntet Pierre",
+    fonction: "Informaticien (Correspondant base en Allemagne)",
+    description: "Mr.Fongwouet est un informaticien passionné, doté d'une expertise en Back-end/Front-end, JSP-JAVA et MS Office. Avec une solide expérience en tant que Data Analyst avec Ms Power Bi et Comptabilité analytique. Toujours à l'affût des dernières technologies et des meilleures pratiques de codage. Mr.Fongwouet est un correspondant et un atout précieux pour tout projet de développement. Sa capacité à relever les défis font de lui un collaborateur de choix pour transformer notre secteur numérique."
   }
 ];
 
@@ -124,6 +72,70 @@ const Detail = () => {
 
     return () => clearTimeout(timer);
   }, [id]);
+
+  // Fonction pour déterminer les expertises basées sur la fonction
+  const getExpertiseByRole = (role) => {
+    const expertiseMap = {
+      1: ["Coopération Internationale", "Développement Durable", "Diplomatie", "Entrepreneuriat Agricole"],
+      2: ["Conception Architecturale", "Design Innovant", "Gestion de Projets", "Communication"],
+      3: ["Développement Front-end", "Technologies Web", "Innovation Numérique", "Solutions Créatives"],
+      4: ["Back-end/Front-end", "JSP-JAVA", "Data Analysis", "MS Office", "Comptabilité Analytique"]
+    };
+    return expertiseMap[id] || ["Expertise Professionnelle", "Compétences Techniques"];
+  };
+
+  // Fonction pour déterminer les réalisations basées sur la fonction
+  const getAchievementsByRole = (role) => {
+    const achievementsMap = {
+      1: [
+        "Diplômé de l'Institut des Relations Internationales du Cameroun",
+        "Doctorant en Relations Internationales",
+        "Entrepreneur agricole accompli",
+        "Militant actif dans plusieurs associations"
+      ],
+      2: [
+        "Expert en design innovant et durable",
+        "Compétences avérées en conception architecturale",
+        "Gestion efficace de projets complexes",
+        "Création de solutions fonctionnelles et esthétiques"
+      ],
+      3: [
+        "Expertise technique exceptionnelle en développement",
+        "Créativité débordante dans les solutions numériques",
+        "Maîtrise des dernières technologies web",
+        "Transformation d'idées en réalité numérique"
+      ],
+      4: [
+        "Expertise en Back-end/Front-end",
+        "Compétences en JSP-JAVA",
+        "Expérience en Data Analysis avec Power BI",
+        "Connaissances en comptabilité analytique"
+      ]
+    };
+    return achievementsMap[id] || ["Expert reconnu dans son domaine", "Contributions significatives"];
+  };
+
+  // Fonction pour obtenir la localisation
+  const getLocationByRole = (role) => {
+    const locationMap = {
+      1: "Cameroun",
+      2: "Cameroun",
+      3: "Cameroun",
+      4: "Allemagne (Correspondant)"
+    };
+    return locationMap[id] || "Cameroun";
+  };
+
+  // Fonction pour obtenir l'icône selon le rôle
+  const getRoleIcon = (roleId) => {
+    const iconMap = {
+      1: Globe,
+      2: Building,
+      3: Code,
+      4: Cpu
+    };
+    return iconMap[roleId] || User;
+  };
 
   if (loading) {
     return (
@@ -155,6 +167,11 @@ const Detail = () => {
     );
   }
 
+  const expertise = getExpertiseByRole(member.id);
+  const achievements = getAchievementsByRole(member.id);
+  const location = getLocationByRole(member.id);
+  const RoleIcon = getRoleIcon(member.id);
+
   return (
     <div className="detail-page bg-gradient-to-b from-blue-50 to-white min-h-screen">
       {/* Navigation */}
@@ -180,7 +197,7 @@ const Detail = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center" data-aos="fade-down">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-teko">
-            Profil Polyvalent
+            Profil Professionnel
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
         </div>
@@ -206,69 +223,31 @@ const Detail = () => {
 
               {/* Basic Info */}
               <div className="p-6">
-                <h1 className="text-2xl font-bold text-gray-800 mb-2">{member.name}</h1>
-                <p className="text-gray-600 mb-6">{member.description}</p>
+                <div className="flex items-center mb-4">
+                  <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                    <RoleIcon className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-bold text-gray-800 mb-1">{member.name}</h1>
+                    <p className="text-gray-600">{member.fonction}</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed">{member.description}</p>
 
                 {/* Contact Info */}
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center text-gray-700">
-                    <Mail className="w-5 h-5 mr-3 text-orange-500" />
-                    <span>{member.email}</span>
-                  </div>
-                  <div className="flex items-center text-gray-700">
-                    <Phone className="w-5 h-5 mr-3 text-orange-500" />
-                    <span>{member.phone}</span>
+                    <Briefcase className="w-5 h-5 mr-3 text-orange-500" />
+                    <span>{member.fonction}</span>
                   </div>
                   <div className="flex items-center text-gray-700">
                     <MapPin className="w-5 h-5 mr-3 text-orange-500" />
-                    <span>{member.location}</span>
+                    <span>Localisation: {location}</span>
                   </div>
                   <div className="flex items-center text-gray-700">
-                    <Calendar className="w-5 h-5 mr-3 text-orange-500" />
-                    <span>Expérience: {member.experience}</span>
-                  </div>
-                </div>
-
-                {/* Social Links */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Réseaux Sociaux</h3>
-                  <div className="flex space-x-3">
-                    {member.social?.linkedin && (
-                      <a 
-                        href={member.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-lg transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.social?.twitter && (
-                      <a 
-                        href={member.social.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-sky-100 hover:bg-sky-200 text-sky-600 p-2 rounded-lg transition-colors"
-                        aria-label="Twitter"
-                      >
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.social?.facebook && (
-                      <a 
-                        href={member.social.facebook}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-blue-100 hover:bg-blue-200 text-blue-600 p-2 rounded-lg transition-colors"
-                        aria-label="Facebook"
-                      >
-                        <Facebook className="w-5 h-5" />
-                      </a>
-                    )}
-                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-lg transition-colors">
-                      <Instagram className="w-5 h-5" />
-                    </button>
+                    <Award className="w-5 h-5 mr-3 text-orange-500" />
+                    <span>Expertise: {expertise.length} domaines</span>
                   </div>
                 </div>
 
@@ -288,7 +267,7 @@ const Detail = () => {
             {/* Tabs Navigation */}
             <div className="bg-white rounded-2xl shadow-lg mb-6 overflow-hidden">
               <div className="flex border-b border-gray-200">
-                {['overview', 'expertise', 'achievements', 'bio'].map((tab) => (
+                {['overview', 'expertise', 'achievements'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
@@ -301,7 +280,6 @@ const Detail = () => {
                     {tab === 'overview' && 'Aperçu'}
                     {tab === 'expertise' && 'Expertise'}
                     {tab === 'achievements' && 'Réalisations'}
-                    {tab === 'bio' && 'Biographie'}
                   </button>
                 ))}
               </div>
@@ -312,34 +290,33 @@ const Detail = () => {
               {activeTab === 'overview' && (
                 <div data-aos="fade-up">
                   <div className="flex items-center mb-6">
-                    <div className="bg-orange-100 p-3 rounded-lg mr-4">
-                      <User className="w-6 h-6 text-orange-500" />
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <User className="w-6 h-6 text-blue-500" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800">Aperçu du Profil</h3>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-blue-50 p-4 rounded-lg">
-                      <div className="flex items-center mb-2">
-                        <Briefcase className="w-5 h-5 text-blue-500 mr-2" />
-                        <h4 className="font-semibold text-gray-800">Fonction</h4>
-                      </div>
-                      <p className="text-gray-700">{member.fonction}</p>
-                    </div>
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-gray-800 mb-4">Présentation</h4>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      {member.description}
+                    </p>
                     
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <div className="flex items-center mb-2">
-                        <Target className="w-5 h-5 text-green-500 mr-2" />
-                        <h4 className="font-semibold text-gray-800">Spécialité</h4>
+                    <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl mb-6">
+                      <div className="flex items-start">
+                        <Heart className="w-6 h-6 text-orange-500 mr-4 flex-shrink-0 mt-1" />
+                        <p className="text-gray-700 italic">
+                          "Passionné par mon domaine d'expertise, je m'engage à apporter des solutions innovantes
+                          et efficaces qui créent une valeur durable pour nos clients et partenaires."
+                        </p>
                       </div>
-                      <p className="text-gray-700">{member.description}</p>
                     </div>
                   </div>
 
                   <div className="mb-8">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-4">Expertise Clé</h4>
+                    <h4 className="text-lg font-semibold text-gray-800 mb-4">Domaines de Compétence</h4>
                     <div className="flex flex-wrap gap-2">
-                      {member.expertise.map((skill, index) => (
+                      {expertise.map((skill, index) => (
                         <span 
                           key={index}
                           className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium"
@@ -348,11 +325,6 @@ const Detail = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800 mb-4">À propos</h4>
-                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
                   </div>
                 </div>
               )}
@@ -367,7 +339,7 @@ const Detail = () => {
                   </div>
 
                   <div className="space-y-6">
-                    {member.expertise.map((skill, index) => (
+                    {expertise.map((skill, index) => (
                       <div key={index} className="flex items-start">
                         <div className="bg-green-100 p-2 rounded-full mr-4 mt-1">
                           <ChevronRight className="w-4 h-4 text-green-600" />
@@ -375,8 +347,7 @@ const Detail = () => {
                         <div>
                           <h4 className="text-lg font-semibold text-gray-800 mb-2">{skill}</h4>
                           <p className="text-gray-600">
-                            Expertise approfondie dans ce domaine avec des années d'expérience pratique
-                            et des résultats tangibles.
+                            Maîtrise approfondie de ce domaine avec une approche innovante et des résultats concrets.
                           </p>
                         </div>
                       </div>
@@ -386,11 +357,11 @@ const Detail = () => {
                   <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl">
                     <div className="flex items-center mb-4">
                       <Lightbulb className="w-6 h-6 text-blue-500 mr-3" />
-                      <h4 className="text-xl font-semibold text-gray-800">Approche Innovante</h4>
+                      <h4 className="text-xl font-semibold text-gray-800">Approche Professionnelle</h4>
                     </div>
                     <p className="text-gray-700">
-                      {member.name} combine expertise technique et vision stratégique pour développer
-                      des solutions innovantes qui répondent aux défis du développement durable.
+                      {member.name} combine expertise technique, créativité et rigueur pour développer
+                      des solutions adaptées aux besoins spécifiques de chaque projet.
                     </p>
                   </div>
                 </div>
@@ -400,13 +371,13 @@ const Detail = () => {
                 <div data-aos="fade-up">
                   <div className="flex items-center mb-6">
                     <div className="bg-purple-100 p-3 rounded-lg mr-4">
-                      <Star className="w-6 h-6 text-purple-500" />
+                      <Shield className="w-6 h-6 text-purple-500" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Réalisations & Distinctions</h3>
+                    <h3 className="text-2xl font-bold text-gray-800">Formation & Réalisations</h3>
                   </div>
 
                   <div className="space-y-6">
-                    {member.achievements.map((achievement, index) => (
+                    {achievements.map((achievement, index) => (
                       <div 
                         key={index}
                         className="bg-gradient-to-r from-white to-gray-50 p-6 rounded-xl border border-gray-200 hover:border-orange-300 transition-colors"
@@ -420,7 +391,7 @@ const Detail = () => {
                           <div>
                             <h4 className="text-lg font-semibold text-gray-800 mb-2">{achievement}</h4>
                             <p className="text-gray-600">
-                              Reconnaissance de l'excellence et du dévouement dans le domaine.
+                              Cette réalisation démontre l'expertise et le dévouement de {member.name.split(' ')[0]} dans son domaine.
                             </p>
                           </div>
                         </div>
@@ -430,70 +401,16 @@ const Detail = () => {
 
                   <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-xl text-center">
-                      <div className="text-3xl font-bold mb-2">{member.experience}</div>
-                      <div className="text-sm">Années d'Expérience</div>
-                    </div>
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center">
-                      <div className="text-3xl font-bold mb-2">{member.expertise.length}+</div>
+                      <div className="text-3xl font-bold mb-2">{expertise.length}</div>
                       <div className="text-sm">Domaines d'Expertise</div>
                     </div>
+                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center">
+                      <div className="text-3xl font-bold mb-2">{achievements.length}</div>
+                      <div className="text-sm">Réalisations</div>
+                    </div>
                     <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-xl text-center">
-                      <div className="text-3xl font-bold mb-2">50+</div>
-                      <div className="text-sm">Projets Accomplis</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'bio' && (
-                <div data-aos="fade-up">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-pink-100 p-3 rounded-lg mr-4">
-                      <BookOpen className="w-6 h-6 text-pink-500" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Biographie Complète</h3>
-                  </div>
-
-                  <div className="prose max-w-none">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-4">Parcours Professionnel</h4>
-                    <p className="text-gray-700 mb-6 leading-relaxed">
-                      {member.bio} Avec {member.experience} d'expérience, {member.name.split(' ')[0]} 
-                      a contribué significativement au développement de DRINDSUD et à la réalisation 
-                      de nombreux projets réussis.
-                    </p>
-
-                    <h4 className="text-xl font-semibold text-gray-800 mb-4">Philosophie Professionnelle</h4>
-                    <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl mb-6">
-                      <div className="flex items-start">
-                        <Heart className="w-6 h-6 text-orange-500 mr-4 flex-shrink-0 mt-1" />
-                        <p className="text-gray-700 italic">
-                          "Je crois fermement que le développement durable passe par l'innovation, 
-                          la collaboration et l'engagement envers l'excellence. Chaque projet est 
-                          une opportunité de créer un impact positif et durable."
-                        </p>
-                      </div>
-                    </div>
-
-                    <h4 className="text-xl font-semibold text-gray-800 mb-4">Éducation & Formation</h4>
-                    <div className="space-y-4">
-                      <div className="flex items-center">
-                        <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                          <GraduationCap className="w-5 h-5 text-blue-500" />
-                        </div>
-                        <div>
-                          <h5 className="font-semibold text-gray-800">Master en Développement Durable</h5>
-                          <p className="text-gray-600">Université de Yaoundé I</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="bg-green-100 p-2 rounded-lg mr-4">
-                          <Shield className="w-5 h-5 text-green-500" />
-                        </div>
-                        <div>
-                          <h5 className="font-semibold text-gray-800">Certification PMP</h5>
-                          <p className="text-gray-600">Project Management Institute</p>
-                        </div>
-                      </div>
+                      <div className="text-3xl font-bold mb-2">100%</div>
+                      <div className="text-sm">Engagement</div>
                     </div>
                   </div>
                 </div>

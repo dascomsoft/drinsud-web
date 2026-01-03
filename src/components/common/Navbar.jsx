@@ -51,9 +51,7 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-              Devenir Client
-            </button>
+           
           </div>
 
           {/* Menu Mobile Button */}
@@ -122,9 +120,7 @@ const Navbar = () => {
                     {item.name}
                   </Link>
                 ))}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors mt-4">
-                  Devenir Client
-                </button>
+             
               </div>
 
               {/* Contact info mobile */}
