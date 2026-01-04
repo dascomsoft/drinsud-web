@@ -196,7 +196,7 @@ const Services = () => {
     },
     {
       id: 'finance',
-      title: 'Rubrique Gestion de l\'Épargne et des Transactions Financières',
+      title: 'Rubrique Gestion de l\'Épargne et des Transactions',
       subtitle: 'Chemin vers la Prospérité',
       description: 'Nous sécurisons votre argent dans le pays d\'origine en vue de l\'investissement ou pour des activités spécifiques à travers nos banques partenaires.',
       image: '/images/finance1.jpg',
@@ -436,70 +436,87 @@ const Services = () => {
 
   return (
     <div className="services-page">
-      {/* Hero Section */}
+      {/* Hero Section - Mobile Optimized */}
       <section 
-        className="relative py-20 md:py-32 bg-cover bg-center bg-fixed"
+        className="relative py-12 md:py-20 lg:py-32 bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(20, 21, 51, 0.85), rgba(20, 21, 51, 0.85)), url(/images/ino8.jpg)'
+          backgroundImage: 'linear-gradient(rgba(20, 21, 51, 0.85), rgba(20, 21, 51, 0.85)), url(/images/ino8.jpg)',
+          backgroundAttachment: 'scroll'
         }}
         data-aos="fade-in"
       >
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 bg-black/40 md:bg-transparent"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-teko leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-8 font-teko leading-tight">
               Nos Services De Première Classe
             </h1>
-            <div className="w-32 h-1 bg-orange-500 mx-auto mb-8" data-aos="fade-up" data-aos-delay="200"></div>
-            <p className="text-lg md:text-xl mb-10 leading-relaxed opacity-90">
+            <div className="w-24 sm:w-32 h-1 bg-orange-500 mx-auto mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200"></div>
+            <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-10 leading-relaxed opacity-90 px-2 sm:px-0">
               Découvrez notre gamme complète de services d'excellence : Gestion de Séjour, Projet Foncier, 
               Gestion de Projet, Bâtiment & Immobilier, Épargne & Finance, Ressources Humaines. 
               Chaque service est de qualité, d'innovation et de dévouement. Vos besoins sont notre priorité absolue.
             </p>
-            <div className="mt-12" data-aos="zoom-in" data-aos-delay="400">
-              <ArrowDown className="w-12 h-12 mx-auto text-orange-400 animate-bounce" />
+            <div className="mt-8 md:mt-12" data-aos="zoom-in" data-aos-delay="400">
+              <ArrowDown className="w-10 h-10 sm:w-12 sm:h-12 mx-auto text-orange-400 animate-bounce" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-4">
+      {/* Introduction Section - Mobile Optimized */}
+      <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed italic">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed italic px-2 sm:px-0">
               Découvrez nos différentes rubriques, chacune dédiée à vous offrir une expertise exceptionnelle 
               dans la Gestion de Séjour, le Projet Foncier, la Gestion de Projet, le Bâtiment & Immobilier, 
               l'Épargne & Finance, et les Ressources Humaines. Bienvenue chez nous, où chaque service est une classe à part.
             </p>
-            <div className="my-8" data-aos="fade-up" data-aos-delay="200">
-              <ArrowDown className="w-10 h-10 mx-auto text-orange-500" />
+            <div className="my-6 md:my-8" data-aos="fade-up" data-aos-delay="200">
+              <ArrowDown className="w-8 h-8 sm:w-10 sm:h-10 mx-auto text-orange-500" />
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-12" data-aos="fade-up" data-aos-delay="400">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="400">
               Liste de nos différentes rubriques
             </h3>
           </div>
         </div>
       </section>
 
-      {/* Services Navigation */}
-      <section className="py-8 bg-gray-100 sticky top-0 z-40 shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4" data-aos="fade-down">
+      {/* Services Navigation Mobile-Friendly */}
+      <section className="py-6 md:py-8 bg-gray-100">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-4" data-aos="fade-down">
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">Navigation rapide</h4>
+            <p className="text-sm text-gray-600 mb-4">Cliquez sur une rubrique pour accéder directement</p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3" data-aos="fade-up">
             {serviceCategories.map((category) => (
               <a
                 key={category.id}
                 href={`#${category.id}`}
-                className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${category.color} ${category.iconColor} hover:scale-105 hover:shadow-lg`}
+                className={`inline-flex items-center justify-center px-4 py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${category.color} ${category.iconColor} hover:scale-105 hover:shadow-lg active:scale-95 border border-gray-200 min-h-[50px]`}
               >
-                {React.cloneElement(category.services[0].icon, { className: "w-4 h-4 mr-2" })}
-                {category.title.split('Rubrique ')[1]}
+                <span className="flex items-center">
+                  {React.cloneElement(category.services[0].icon, { className: "w-4 h-4 sm:w-5 sm:h-5 mr-2" })}
+                  <span className="truncate">{category.title.split('Rubrique ')[1]}</span>
+                </span>
               </a>
             ))}
+          </div>
+          
+          <div className="text-center mt-6">
+            <p className="text-xs sm:text-sm text-gray-500">
+              <ArrowDown className="inline w-4 h-4 mr-1" />
+              Faites défiler pour voir tous les services détaillés
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Services Categories avec images de fond */}
+      {/* Services Categories avec images de fond - Mobile Optimized */}
       <div className="space-y-0">
         {serviceCategories.map((category, index) => (
           <ServiceCategory 
@@ -510,42 +527,45 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Additional Sections */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4">
+      {/* Additional Sections - Mobile Optimized */}
+      <section className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
           {additionalSections.map((section, index) => (
             <div 
               key={index}
-              className={`mb-16 ${index % 2 === 0 ? '' : ''}`}
+              className={`mb-12 md:mb-16 ${index % 2 === 0 ? '' : ''}`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl overflow-hidden">
                 <div className="md:flex">
                   <div className="md:w-2/5">
-                    <img 
-                      src={section.image} 
-                      alt={section.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                    <div className="aspect-w-4 aspect-h-3">
+                      <img 
+                        src={section.image} 
+                        alt={section.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
-                  <div className="md:w-3/5 p-8">
-                    <div className="flex items-center mb-4">
-                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-lg mr-4">
-                        <Lightbulb className="w-6 h-6 text-white" />
+                  <div className="md:w-3/5 p-4 sm:p-6 md:p-8">
+                    <div className="flex items-center mb-3 sm:mb-4">
+                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4">
+                        <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-teko">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 font-teko">
                         {section.title}
                       </h3>
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-700 mb-4">
+                    <h4 className="text-lg sm:text-xl font-semibold text-gray-700 mb-3 sm:mb-4">
                       {section.subtitle}
                     </h4>
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                       {section.description}
                     </p>
-                    <div className="flex items-center text-purple-600 font-medium">
-                      <HeartPulse className="w-5 h-5 mr-2" />
+                    <div className="flex items-center text-purple-600 font-medium text-sm sm:text-base">
+                      <HeartPulse className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       <span>Engagement pour le développement durable</span>
                     </div>
                   </div>
@@ -556,93 +576,103 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Mobile Optimized */}
       <section 
-        className="relative py-16 md:py-24 bg-cover bg-center bg-fixed overflow-hidden"
+        className="relative py-12 md:py-20 lg:py-24 overflow-hidden"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/images/invest7.jpg)'
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/images/invest7.jpg)',
+          backgroundAttachment: 'scroll'
         }}
         data-aos="fade-in"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-500/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-blue-500/10"></div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div data-aos="fade-up">
-              <span className="text-orange-400 font-semibold text-lg mb-2 block flex items-center justify-center">
-                <Users className="w-5 h-5 mr-2" />
+              <span className="text-orange-400 font-semibold text-sm sm:text-base md:text-lg mb-2 block flex items-center justify-center">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Envie de travailler avec nous ?
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-teko leading-tight">
-                Rejoignez notre Équipe : Explorez des Opportunités Passionnantes!
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 font-teko leading-tight px-2 sm:px-0">
+                Rejoignez notre Équipe
               </h2>
             </div>
 
-            <div className="mb-10" data-aos="fade-up" data-aos-delay="200">
-              <p className="text-lg text-gray-200 leading-relaxed">
+            <div className="mb-6 md:mb-10" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed px-2 sm:px-0">
                 Vous recherchez un environnement stimulant, propice à l'épanouissement professionnel ? 
-                Chez nous, chaque membre est un pilier essentiel de notre succès. Découvrez des défis 
-                inspirants, une culture collaborative et des opportunités de croissance. Ensemble, 
-                bâtissons l'avenir et donnez vie à vos ambitions.
+                Chez nous, chaque membre est un pilier essentiel de notre succès.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="400">
               <Link 
                 to="/contact"
-                className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
               >
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Contactez-nous
               </Link>
               
               <Link 
                 to="/recrutement"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-white hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center bg-transparent border border-white hover:bg-white/10 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
               >
-                <Users className="w-5 h-5 mr-2" />
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Postuler maintenant
               </Link>
             </div>
 
-            {/* Contact Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16" data-aos="fade-up" data-aos-delay="600">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="bg-orange-500 p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-white" />
+            {/* Contact Info - Mobile Optimized */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="600">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center justify-center mb-3 sm:mb-4">
+                  <div className="bg-orange-500 p-2 sm:p-3 rounded-full">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Téléphone</h4>
-                <a href="tel:+237699377664" className="text-orange-300 hover:text-orange-200 transition-colors">
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Téléphone</h4>
+                <a href="tel:+237699377664" className="text-orange-300 hover:text-orange-200 transition-colors text-sm sm:text-base">
                   +237 699 37 7664
                 </a>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="bg-blue-500 p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-white" />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center justify-center mb-3 sm:mb-4">
+                  <div className="bg-blue-500 p-2 sm:p-3 rounded-full">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Email</h4>
-                <a href="mailto:lepaneliste@gmail.com" className="text-blue-300 hover:text-blue-200 transition-colors">
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Email</h4>
+                <a href="mailto:lepaneliste@gmail.com" className="text-blue-300 hover:text-blue-200 transition-colors text-sm sm:text-base break-all">
                   lepaneliste@gmail.com
                 </a>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="bg-green-500 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-white" />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center justify-center mb-3 sm:mb-4">
+                  <div className="bg-green-500 p-2 sm:p-3 rounded-full">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2">Adresse</h4>
-                <p className="text-green-300">455 Rue Martin, Yaoundé-CMR</p>
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Adresse</h4>
+                <p className="text-green-300 text-sm sm:text-base">455 Rue Martin, Yaoundé-CMR</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Back to Top Button */}
+      <div className="fixed bottom-4 right-4 z-40">
+        <a
+          href="#"
+          className="flex items-center justify-center w-12 h-12 bg-orange-500 rounded-full shadow-lg hover:bg-orange-600 active:scale-95 transition-all duration-300"
+          aria-label="Retour en haut"
+        >
+          <ArrowDown className="w-6 h-6 text-white transform rotate-180" />
+        </a>
+      </div>
     </div>
   );
 };
