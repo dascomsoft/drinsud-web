@@ -63,14 +63,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8">
+    <footer className="bg-gradient-to-b from-gray-700 to-black text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Logo et description */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <img
-                src="/images/logoDrindsud.jpg"
+                src="/images/DRINSUDLOGO.png"
                 alt="DRINDSUD Logo"
                 className="h-14 w-auto rounded-lg"
               />

@@ -19,18 +19,18 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="bg-slate-900 fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-slate-700 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-28">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src="/images/logoDrindsud.jpg"
+              src="/images/DRINSUDLOGO.png"
               alt="DRINDSUD Logo"
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-20 w-auto rounded-full transition-transform duration-300 group-hover:scale-105"
             />
             <span className="ml-3 font-teko text-xl font-bold text-white hidden md:block">
-              DRINDSUD
+              DRINSUD
             </span>
           </Link>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className={`absolute top-0 right-0 h-full w-80 bg-slate-900 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+            className={`absolute top-0 right-0 h-full w-80 bg-slate-700 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
               }`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -87,12 +87,12 @@ const Navbar = () => {
               <div className="flex justify-between items-center mb-8">
                 <div className="flex items-center">
                   <img
-                    src="/images/logoDrindsud.jpg"
+                    src="/images/DRINSUDLOGO.png"
                     alt="DRINDSUD Logo"
-                    className="h-10 w-auto"
+                    className="h-14 w-auto rounded-full"
                   />
                   <span className="ml-3 font-teko text-xl font-bold text-white">
-                    DRINDSUD
+                    DRINSUD
                   </span>
                 </div>
                 <button

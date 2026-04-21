@@ -49,7 +49,12 @@ import {
   Coffee,
   Package,
   Globe2,
-  FileSearch
+  FileSearch,
+  Code,
+  Monitor,
+  Megaphone,
+  Share2,
+  Plane
 } from 'lucide-react';
 
 const Services = () => {
@@ -400,7 +405,7 @@ const Services = () => {
           shortDescription: 'Levée de fonds internationaux'
         },
         { 
-          name: 'Accompagnement des Collectivités territoriales dans la mise en place de leur stratégie d\'action international et de codéveloppement', 
+          name: 'Accompagnement des Collectivités territoriales dans la mise en place de leur stratégie d\'action international et de marketing territorial', 
           icon: <Network className="w-5 h-5" />,
           shortDescription: 'Coopération internationale territoriale'
         },
@@ -413,6 +418,130 @@ const Services = () => {
           name: 'Coaching et formation des organisations et PME en matière de montage et gestion de projet et développement durable', 
           icon: <GraduationCap className="w-5 h-5" />,
           shortDescription: 'Formation et coaching organisationnel'
+        },
+        { 
+          name: 'Animation stratégique du développement local et de l\'AICT des collectivités territoriales décentralisées (ingénierie locale, volontariat, formation des acteurs de la coopération …)', 
+          icon: <Network className="w-5 h-5" />,
+          shortDescription: 'Animation stratégique et AICT'
+        }
+      ]
+    },
+    {
+      id: 'digital',
+      title: 'Rubrique Solutions Digitales',
+      subtitle: 'La Transformation Digitale à votre Service',
+      description: 'DRINSUD vous accompagne dans votre transformation numérique avec des solutions digitales innovantes et adaptées à vos besoins. Notre expertise vous garantit une présence en ligne performante et une visibilité optimale.',
+      image: '/images/digital.jpg',
+      color: 'bg-violet-50',
+      iconColor: 'text-violet-500',
+      textColor: 'text-violet-600',
+      services: [
+        { 
+          name: 'Création d\'applications web sur mesure', 
+          icon: <Code className="w-5 h-5" />,
+          shortDescription: 'Applications web performantes'
+        },
+        { 
+          name: 'Développement de sites web (vitrine, e-commerce, institutionnel)', 
+          icon: <Monitor className="w-5 h-5" />,
+          shortDescription: 'Sites web professionnels'
+        },
+        { 
+          name: 'Marketing digital (SEO, SEA, publicité en ligne)', 
+          icon: <Megaphone className="w-5 h-5" />,
+          shortDescription: 'Stratégies marketing digitales'
+        },
+        { 
+          name: 'Community management et gestion des réseaux sociaux', 
+          icon: <Share2 className="w-5 h-5" />,
+          shortDescription: 'Animation de vos communautés'
+        },
+        { 
+          name: 'Création de contenu digital (rédaction, vidéo, design)', 
+          icon: <FilePenLine className="w-5 h-5" />,
+          shortDescription: 'Contenu engageant et professionnel'
+        },
+        { 
+          name: 'Référencement naturel (SEO) et amélioration de la visibilité', 
+          icon: <Target className="w-5 h-5" />,
+          shortDescription: 'Optimisation pour les moteurs de recherche'
+        },
+        { 
+          name: 'Maintenance et hébergement de sites web', 
+          icon: <Wifi className="w-5 h-5" />,
+          shortDescription: 'Sécurité et disponibilité 24/7'
+        },
+        { 
+          name: 'Solutions e-commerce et paiement en ligne', 
+          icon: <ShoppingCart className="w-5 h-5" />,
+          shortDescription: 'Boutiques en ligne sécurisées'
+        }
+      ]
+    },
+    {
+      id: 'voyages',
+      title: 'Rubrique Voyages & Études à l\'Étranger',
+      subtitle: 'Explorez le Monde, Réalisez vos Rêves',
+      description: 'DRINSUD vous accompagne dans vos projets de voyages et d\'études à l\'étranger. Que ce soit pour des études, des stages, des visas ou des voyages touristiques, nous facilitons vos démarches pour une expérience réussie.',
+      image: '/images/voyages.jpg',
+      color: 'bg-rose-50',
+      iconColor: 'text-rose-500',
+      textColor: 'text-rose-600',
+      services: [
+        { 
+          name: 'Orientation et conseils pour les études à l\'étranger', 
+          icon: <GraduationCap className="w-5 h-5" />,
+          shortDescription: 'Choix des universités et filières'
+        },
+        { 
+          name: 'Inscription dans les universités et grandes écoles internationales', 
+          icon: <BookOpen className="w-5 h-5" />,
+          shortDescription: 'Procédures d\'inscription simplifiées'
+        },
+        { 
+          name: 'Assistance pour l\'obtention de visas d\'études et touristiques', 
+          icon: <FileText className="w-5 h-5" />,
+          shortDescription: 'Suivi des dossiers de visa'
+        },
+        { 
+          name: 'Recherche de bourses et financements pour les études', 
+          icon: <Wallet className="w-5 h-5" />,
+          shortDescription: 'Aide au financement'
+        },
+        { 
+          name: 'Organisation de voyages touristiques (individuels et groupes)', 
+          icon: <Plane className="w-5 h-5" />,
+          shortDescription: 'Circuits et séjours personnalisés'
+        },
+        { 
+          name: 'Réservation de billets d\'avion, hôtels et transports', 
+          icon: <Calendar className="w-5 h-5" />,
+          shortDescription: 'Meilleurs tarifs garantis'
+        },
+        { 
+          name: 'Accompagnement pour les stages et programmes d\'échange internationaux', 
+          icon: <Briefcase className="w-5 h-5" />,
+          shortDescription: 'Opportunités professionnelles à l\'international'
+        },
+        { 
+          name: 'Assistance linguistique et préparation aux tests (TOEFL, IELTS, etc.)', 
+          icon: <FileText className="w-5 h-5" />,
+          shortDescription: 'Préparation aux examens'
+        },
+        { 
+          name: 'Aide à la recherche de logement à l\'étranger', 
+          icon: <Home className="w-5 h-5" />,
+          shortDescription: 'Hébergement sécurisé'
+        },
+        { 
+          name: 'Assurance voyage et assistance rapatriement', 
+          icon: <Shield className="w-5 h-5" />,
+          shortDescription: 'Protection complète'
+        },
+        { 
+          name: 'Organisation de voyages d\'affaires et de missions professionnelles', 
+          icon: <Briefcase className="w-5 h-5" />,
+          shortDescription: 'Logistique professionnelle'
         }
       ]
     }
@@ -455,8 +584,9 @@ const Services = () => {
             <div className="w-24 sm:w-32 h-1 bg-orange-500 mx-auto mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200"></div>
             <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-10 leading-relaxed opacity-90 px-2 sm:px-0">
               Découvrez notre gamme complète de services d'excellence : Gestion de Séjour, Projet Foncier, 
-              Gestion de Projet, Bâtiment & Immobilier, Épargne & Finance, Ressources Humaines. 
-              Chaque service est de qualité, d'innovation et de dévouement. Vos besoins sont notre priorité absolue.
+              Gestion de Projet, Bâtiment & Immobilier, Épargne & Finance, Ressources Humaines, 
+              Solutions Digitales, Voyages & Études à l'Étranger. Chaque service est de qualité, 
+              d'innovation et de dévouement. Vos besoins sont notre priorité absolue.
             </p>
             <div className="mt-8 md:mt-12" data-aos="zoom-in" data-aos-delay="400">
               <ArrowDown className="w-10 h-10 sm:w-12 sm:h-12 mx-auto text-orange-400 animate-bounce" />
@@ -472,7 +602,8 @@ const Services = () => {
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed italic px-2 sm:px-0">
               Découvrez nos différentes rubriques, chacune dédiée à vous offrir une expertise exceptionnelle 
               dans la Gestion de Séjour, le Projet Foncier, la Gestion de Projet, le Bâtiment & Immobilier, 
-              l'Épargne & Finance, et les Ressources Humaines. Bienvenue chez nous, où chaque service est une classe à part.
+              l'Épargne & Finance, les Ressources Humaines, les Solutions Digitales, et les Voyages & Études à l'Étranger. 
+              Bienvenue chez nous, où chaque service est une classe à part.
             </p>
             <div className="my-6 md:my-8" data-aos="fade-up" data-aos-delay="200">
               <ArrowDown className="w-8 h-8 sm:w-10 sm:h-10 mx-auto text-orange-500" />
