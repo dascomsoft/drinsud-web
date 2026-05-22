@@ -131,7 +131,7 @@ const CommentSection = ({ postId }) => {
           />
           <button
             type="submit"
-            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition flex items-center gap-2"
+            className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition flex items-center gap-2"
           >
             <Send size={18} />
             Publier le commentaire

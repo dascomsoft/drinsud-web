@@ -81,7 +81,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition disabled:opacity-50"
+            className="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-primary-dark transition disabled:opacity-50"
           >
             {loading ? 'Connexion...' : 'Se connecter'}
           </button>
