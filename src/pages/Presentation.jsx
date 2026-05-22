@@ -45,8 +45,8 @@ const Presentation = () => {
   return (
     <div className="presentation-page overflow-x-hidden">
       {/* Hero Section - Mobile Optimized */}
-      <section 
-        className="relative py-12 md:py-20 lg:py-32 bg-cover bg-center"
+      <section
+        className="relative py-40 md:py-20 lg:py-32 bg-cover bg-center"
         style={{
           backgroundImage: 'linear-gradient(rgba(20, 21, 51, 0.85), rgba(20, 21, 51, 0.85)), url(/images/finance.jpg)',
           backgroundAttachment: 'scroll' // Remove fixed for mobile
@@ -54,22 +54,22 @@ const Presentation = () => {
         data-aos="fade-in"
       >
         <div className="absolute inset-0 bg-black/40 md:bg-transparent"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-8 font-teko leading-snug">
               QUI SOMMES-NOUS?
             </h1>
             <div className="w-24 sm:w-32 h-1 bg-orange-500 mx-auto mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200"></div>
-            
+
             <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
               <p className="text-base sm:text-lg md:text-xl leading-relaxed opacity-90 px-2 sm:px-0">
                 DRINSUD un cabinet d'expertise locale, d'investissement et de facilitation de service à la diaspora camerounaise dispersée à travers le monde. Avec l'aide de nos partenaires dans divers domaines, nous vous offrons des prestations adaptées à vos besoins. Nous disposons d'une expertise en matière d'investissement, codéveloppement, coopération décentralisée et action internationale, développement local et gestion de projets. Nous fournissons des prestations diverses principalement à la diaspora camerounaise mais aussi l'État, les collectivités locales ou les particuliers et organisations qui nous sollicitent.
               </p>
             </div>
-            
-            <Link 
-              to="/entreprise" 
+
+            <Link
+              to="/entreprise"
               className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg text-base sm:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
               data-aos="zoom-in"
               data-aos-delay="400"
@@ -89,9 +89,9 @@ const Presentation = () => {
             <div className="lg:w-1/2 w-full mb-8 lg:mb-0" data-aos="fade-right">
               <div className="relative mx-auto max-w-md lg:max-w-full">
                 <div className="aspect-w-4 aspect-h-3 lg:aspect-w-3 lg:aspect-h-4">
-                  <img 
-                    src="/images/ino2.jpg" 
-                    alt="Notre Mission" 
+                  <img
+                    src="/images/ino2.jpg"
+                    alt="Notre Mission"
                     className="w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl transform hover:scale-[1.02] transition-transform duration-500"
                     loading="lazy"
                   />
@@ -111,11 +111,11 @@ const Presentation = () => {
                   NOTRE MISSION
                 </h2>
               </div>
-              
+
               <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
                 {missions.map((mission, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="flex items-start"
                     data-aos="fade-up"
                     data-aos-delay={Math.min(index * 50, 200)}
@@ -134,8 +134,8 @@ const Presentation = () => {
                   { value: '50+', label: 'Clients', icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" /> },
                   { value: '10+', label: 'Pays', icon: <Globe className="w-4 h-4 sm:w-5 sm:h-5" /> }
                 ].map((stat, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="bg-white p-3 sm:p-4 rounded-lg sm:rounded-xl shadow-sm sm:shadow-md text-center hover:shadow-lg transition-shadow duration-300"
                     data-aos="zoom-in"
                     data-aos-delay={index * 100}
@@ -165,11 +165,11 @@ const Presentation = () => {
                   NOS ACTIONS
                 </h2>
               </div>
-              
+
               <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
                 {actions.map((action, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="flex items-start"
                     data-aos="fade-up"
                     data-aos-delay={Math.min(index * 50, 200)}
@@ -185,29 +185,29 @@ const Presentation = () => {
               {/* Values - Mobile Optimized */}
               <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {[
-                  { 
-                    title: 'Innovation', 
+                  {
+                    title: 'Innovation',
                     description: 'Nous prônons l\'innovation constante',
                     color: 'bg-purple-100 text-purple-600'
                   },
-                  { 
-                    title: 'Transparence', 
+                  {
+                    title: 'Transparence',
                     description: 'Transparence totale dans nos transactions',
                     color: 'bg-blue-100 text-blue-600'
                   },
-                  { 
-                    title: 'Confiance', 
+                  {
+                    title: 'Confiance',
                     description: 'Relations de confiance durables',
                     color: 'bg-orange-100 text-orange-600'
                   },
-                  { 
-                    title: 'Engagement', 
+                  {
+                    title: 'Engagement',
                     description: 'Engagement total vers le succès',
                     color: 'bg-green-100 text-green-600'
                   }
                 ].map((value, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-sm sm:shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
                     data-aos="flip-up"
                     data-aos-delay={index * 100}
@@ -228,9 +228,9 @@ const Presentation = () => {
             <div className="lg:w-1/2 w-full mb-8 lg:mb-0 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="200">
               <div className="relative mx-auto max-w-md lg:max-w-full">
                 <div className="aspect-w-4 aspect-h-3 lg:aspect-w-3 lg:aspect-h-4">
-                  <img 
-                    src="/images/ino5.jpg" 
-                    alt="Nos Actions" 
+                  <img
+                    src="/images/ino5.jpg"
+                    alt="Nos Actions"
                     className="w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl"
                     loading="lazy"
                   />
@@ -244,7 +244,7 @@ const Presentation = () => {
       </section>
 
       {/* CTA Section - Mobile Optimized */}
-      <section 
+      <section
         className="relative py-12 md:py-20 lg:py-24 overflow-hidden"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/images/invest7.jpg)',
@@ -255,7 +255,7 @@ const Presentation = () => {
         data-aos="fade-in"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-blue-500/10"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div data-aos="fade-up">
@@ -270,22 +270,22 @@ const Presentation = () => {
 
             <div className="mb-6 md:mb-10" data-aos="fade-up" data-aos-delay="200">
               <p className="text-base sm:text-lg text-gray-200 leading-relaxed px-2 sm:px-0">
-                Vous recherchez un environnement stimulant, propice à l'épanouissement professionnel ? 
+                Vous recherchez un environnement stimulant, propice à l'épanouissement professionnel ?
                 Chez nous, chaque membre est un pilier essentiel de notre succès.
               </p>
             </div>
 
             {/* Buttons - Mobile Optimized */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="400">
-              <Link 
+              <Link
                 to="/contact"
                 className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Contactez-nous
               </Link>
-              
-              <Link 
+
+              <Link
                 to="/recrutement"
                 className="inline-flex items-center justify-center bg-transparent border border-white hover:bg-white/10 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
               >

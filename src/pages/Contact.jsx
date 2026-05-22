@@ -107,7 +107,7 @@ const Contact = () => {
     <div className="contact-page overflow-x-hidden">
       {/* Section Call - Mobile Optimized */}
       <section 
-        className="relative bg-cover bg-center py-16 md:py-24 lg:py-32"
+        className="relative bg-cover bg-center py-32 md:py-24 lg:py-32"
         style={{ 
           backgroundImage: 'linear-gradient(rgba(20,21,51,0.8),rgba(20,21,51,0.8)), url(/images/imageAbout2.jpg)',
           backgroundAttachment: 'scroll'

@@ -567,7 +567,7 @@ const Services = () => {
     <div className="services-page">
       {/* Hero Section - Mobile Optimized */}
       <section 
-        className="relative py-12 md:py-20 lg:py-32 bg-cover bg-center"
+        className="relative pt-32 pb-16 md:py-20 lg:py-32 bg-cover bg-center"
         style={{
           backgroundImage: 'linear-gradient(rgba(20, 21, 51, 0.85), rgba(20, 21, 51, 0.85)), url(/images/ino8.jpg)',
           backgroundAttachment: 'scroll'

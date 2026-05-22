@@ -102,7 +102,7 @@ const Recrutement = () => {
     <div className="recrutement-page overflow-x-hidden">
       {/* Section Commissionnaire - Mobile Optimized */}
       <section 
-        className="relative bg-cover bg-center py-12 md:py-20 lg:py-28"
+        className="relative bg-cover bg-center py-40 md:py-20 lg:py-28"
         style={{
           backgroundImage: 'linear-gradient(rgba(20,21,51,0.8),rgba(20,21,51,0.8)), url(/images/business-partners.jpg)',
           backgroundAttachment: 'scroll'
