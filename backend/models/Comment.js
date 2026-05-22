@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+
+const CommentSchema = new mongoose.Schema({
+  postId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post',
+    required: true,
+  },
+  author: {
+    type: String,
+    required: true,
+  },
+  text: {
+    type: String,
+    required: true,
+  },
+  likes: {
+    type: Number,
+    default: 0,
+  },
+  isApproved: {
+    type: Boolean,
+    default: true, // Auto-approve, peut être changé pour modération
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+module.exports = mongoose.model('Comment', CommentSchema);
