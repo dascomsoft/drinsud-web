@@ -33,7 +33,7 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28">
+    <div className="min-h-screen bg-gray-50 pt-8">
       <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog & Annonces</h1>

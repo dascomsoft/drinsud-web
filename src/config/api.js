@@ -1,10 +1,9 @@
-// Détection automatique de l'environnement
 const getApiUrl = () => {
-  // En production sur Vercel
+  // Production sur Vercel → backend sur Render
   if (import.meta.env.PROD) {
-    return '/api';
+    return 'https://drinsud-api.onrender.com/api';
   }
-  // En développement local
+  // Développement local
   return 'http://localhost:5000/api';
 };
 
