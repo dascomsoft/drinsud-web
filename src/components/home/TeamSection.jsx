@@ -21,7 +21,7 @@ const teamMembers = [
     id: 3,
     image: "/images/me.jpg",
     name: "Dassi Dieudonne",
-    fonction: "Informaticien (Développeur Front-end)",
+    fonction: "Informaticien (Full-Stack Developer Ingineer)",
     description: "Développeur passionné avec une expertise technique exceptionnelle. Expérience dans le développement logiciel."
   },
   {
