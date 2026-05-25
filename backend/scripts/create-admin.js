@@ -1,57 +1,76 @@
-// backend/scripts/create-admin.js
-require('dotenv').config();
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
 
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
   password: String,
   role: String,
-  createdAt: { type: Date, default: Date.now }
 });
 
 const User = mongoose.model('User', userSchema);
 
-const createAdmin = async () => {
+async function updateAdmin() {
   try {
-    console.log('🔄 Tentative de connexion à MongoDB...');
+    console.log('🔄 Connexion à MongoDB...');
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ Connecté à MongoDB');
+    console.log('✅ Connecté\n');
     
-    const existingAdmin = await User.findOne({ role: 'admin' });
-    if (existingAdmin) {
-      console.log('❌ Un admin existe déjà');
-      console.log('Username:', existingAdmin.username);
-      console.log('Email:', existingAdmin.email);
-      process.exit(0);
+    const newUsername = 'lepaneliste';
+    const newEmail = 'lepaneliste@gmail.com';
+    const newPassword = 'lepaneliste2025';
+    
+    console.log('📝 Nouveaux identifiants:');
+    console.log(`   Username: ${newUsername}`);
+    console.log(`   Email: ${newEmail}`);
+    console.log(`   Password: ${newPassword}\n`);
+    
+    console.log('🔒 Hashage du mot de passe...');
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    
+    console.log('💾 Mise à jour en base...');
+    const result = await User.updateOne(
+      { role: 'admin' },
+      { 
+        username: newUsername,
+        email: newEmail,
+        password: hashedPassword
+      }
+    );
+    
+    if (result.modifiedCount > 0) {
+      console.log('✅ Admin modifié avec succès !\n');
+      console.log('🔐 NOUVEAUX IDENTIFIANTS:');
+      console.log('━'.repeat(50));
+      console.log(`   👤 Username: ${newUsername}`);
+      console.log(`   🔑 Password: ${newPassword}`);
+      console.log(`   📧 Email: ${newEmail}`);
+      console.log('━'.repeat(50));
+    } else if (result.matchedCount > 0) {
+      console.log('⚠️ Aucune modification (identifiants identiques)');
+    } else {
+      console.log('❌ Admin non trouvé. Création...');
+      
+      const newAdmin = new User({
+        username: newUsername,
+        email: newEmail,
+        password: hashedPassword,
+        role: 'admin'
+      });
+      
+      await newAdmin.save();
+      console.log('✅ Admin créé avec succès !');
     }
     
-    const hashedPassword = await bcrypt.hash('Admin123!', 10);
-    
-    const admin = new User({
-      username: 'drinsud_admin',
-      email: 'admin@drinsud.com',
-      password: hashedPassword,
-      role: 'admin'
-    });
-    
-    await admin.save();
-    console.log('✅ Admin créé avec succès');
-    console.log('📋 Identifiants:');
-    console.log('   Username: drinsud_admin');
-    console.log('   Password: Admin123!');
-    console.log('   Email: admin@drinsud.com');
-    
     await mongoose.disconnect();
+    console.log('\n✨ Script terminé');
+    
   } catch (error) {
     console.error('❌ Erreur:', error.message);
-    console.log('\n💡 Vérifiez:');
-    console.log('1. Le mot de passe dans .env');
-    console.log('2. La whitelist IP dans MongoDB Atlas');
-    console.log('3. Que l\'utilisateur existe dans Database Access');
     process.exit(1);
   }
-};
+}
 
-createAdmin();
+updateAdmin();
